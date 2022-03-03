@@ -4,7 +4,6 @@ let Movie = require('../models/movie');
 // Gets all movies from the Database and renders the page to list all movies.
 module.exports.movieList = function(req, res, next) {  
     Movie.find((err, movieList) => {
-        // console.log(movieList);
         if(err)
         {
             return console.error(err);
@@ -56,7 +55,6 @@ module.exports.displayAddPage = (req, res, next) => {
 // Processes the data submitted from the Add form to create a new movie
 module.exports.processAddPage = (req, res, next) => {
 
-    // ADD YOUR CODE HERE
     let newMovie = Movie({
         "_id": req.body.id,
         "Title": req.body.Title,
@@ -85,7 +83,6 @@ module.exports.processAddPage = (req, res, next) => {
 // Gets a movie by id and renders the Edit form using the add_edit.ejs template
 module.exports.displayEditPage = (req, res, next) => {
     
-    // ADD YOUR CODE HERE
     let movieId = req.params.id;
 
     Movie.findById(movieId, (err, editMovie) => {
@@ -108,7 +105,6 @@ module.exports.displayEditPage = (req, res, next) => {
 // Processes the data submitted from the Edit form to update a movie
 module.exports.processEditPage = (req, res, next) => {
     
-    // ADD YOUR CODE HERE
 
     let id = req.params.id
 
@@ -138,7 +134,6 @@ module.exports.processEditPage = (req, res, next) => {
 // Deletes a movie based on its id.
 module.exports.performDelete = (req, res, next) => {
     
-    // ADD YOUR CODE HERE
 
     let movieId = req.params.id;
 
