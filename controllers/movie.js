@@ -44,14 +44,41 @@ module.exports.details = (req, res, next) => {
 // Renders the Add form using the add_edit.ejs template
 module.exports.displayAddPage = (req, res, next) => {
     
-    // ADD YOUR CODE HERE        
+    let newMovie = Movie();
 
+    res.render('movie/add_edit',{
+        title : 'Add a new movie',
+        movie: newMovie
+    })
+    
 }
 
 // Processes the data submitted from the Add form to create a new movie
 module.exports.processAddPage = (req, res, next) => {
 
     // ADD YOUR CODE HERE
+    let newMovie = Movie({
+        "_id": req.body.id,
+        "Title": req.body.Title,
+        "Synopsis": req.body.Synopsis,
+        "Year": req.body.Year,
+        "Director": req.body.Director,
+        "Genre": req.body.Genre
+    });
+
+    Movie.create(newMovie, (err, item) =>{
+        if(err)
+        {
+            console.log(err);
+            res.end(err);
+        }
+        else
+        {
+            console.log(item);
+            res.redirect('/movie/list');
+        }
+    });
+
 
 }
 
@@ -59,13 +86,52 @@ module.exports.processAddPage = (req, res, next) => {
 module.exports.displayEditPage = (req, res, next) => {
     
     // ADD YOUR CODE HERE
+    let movieId = req.params.id;
 
+    Movie.findById(movieId, (err, editMovie) => {
+        if(err)
+        {
+            console.log(err);
+            res.end(err);
+        }
+        else
+        {
+            res.render('movie/add_edit', {
+                title: 'Edit Movie', 
+                movie: editMovie,
+                
+            })
+        }
+    });
 }
 
 // Processes the data submitted from the Edit form to update a movie
 module.exports.processEditPage = (req, res, next) => {
     
     // ADD YOUR CODE HERE
+
+    let id = req.params.id
+
+    let updatedMovie = Movie({
+        "_id": req.body.id,
+        "Title": req.body.Title,
+        "Synopsis": req.body.Synopsis,
+        "Year": req.body.Year,
+        "Director": req.body.Director,
+        "Genre": req.body.Genre
+    });
+
+    Movie.updateOne({_id: id}, updatedMovie, (err) => {
+        if(err)
+        {
+            console.log(err);
+            res.end(err);
+        }
+        else
+        {
+            res.redirect('/movie/list');
+        }
+    });
     
 }
 
@@ -73,5 +139,19 @@ module.exports.processEditPage = (req, res, next) => {
 module.exports.performDelete = (req, res, next) => {
     
     // ADD YOUR CODE HERE
+
+    let movieId = req.params.id;
+
+    Movie.remove({_id: movieId}, (err) => {
+        if(err)
+        {
+            console.log(err);
+            res.end(err);
+        }
+        else
+        {
+            res.redirect('/movie/list');
+        }
+    });
 
 }
