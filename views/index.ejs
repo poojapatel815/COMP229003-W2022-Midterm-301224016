@@ -1,7 +1,47 @@
-<% include partials/header.ejs %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+  <link rel='stylesheet' href='@fortawesome/fontawesome-free/css/all.min.css' />
+</head>
+<body>
+  <% include partials/header.ejs %>
 
-  <h1><%= title %></h1>
-  <p>Welcome to <%= title %></p>
+  <!--  ======================= Start Main Area ================================ -->
+  <main class="site-main">
 
+    <!--  ======================= Start Home page Area =======================  -->
+    <section class="site-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 site-title">
+                    <h3 class="title-text">Hello</h3>
+                    <h2 class="title-text text-uppercase">I am Pooja Patel</h2>
+                    <h6 lass="title-text text-uppercase">Software Developer | Graphic Designer</h6>
+                    <br>
+                    <div class="site-buttons">
+                        <div class="d-flex flex-row flex-wrap">
+                            <button type="button" class="btn button primary-button mr-4 text-uppercase"><a href="/about">About me</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 banner-image">
+                    <img src="/images/undraw_programming_re_kg9v.svg" alt="banner-img" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--  ======================= End Home Page Area =======================  -->
 
-<% include partials/footer.ejs %>
+  
+  
+  <% include partials/footer.ejs %>
+  </main>
+  
+</body>
+</html>
