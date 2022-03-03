@@ -1,341 +1,38 @@
-
 /*-----------------Student Information------------*/
 /*----------------
 
 Student Name:Patel Poojaben Ghanshyambhai
 Student Id:301224016
-Date:04/02/2022
+Date:04/03/2022
 
 ------------------*/
 
 
-/* -------------- css variables -----------------------*/ 
-@import url(/stylesheets/variable.css);
 
-*{
-  margin: 0;
-  padding: 0;
-  outline: none;
-  box-sizing: border-box;
-}
-a{
-  text-decoration: none;
-}
-
-/* ------------ start navigation ---------------------- */ 
-
-.header_area .main-menu .navbar .navbar-brand{
-  padding: 0 2rem 0 5rem;
-}
-
-.header_area .main-menu .navbar{
-  padding: 1rem 20rem ;
-}
-
-.header_area .main-menu .nav-item .nav-link{
-  font: normal 500 15px/2px var(--roboto);
-  text-transform: uppercase;
-  padding: 1.7rem;
-  color: var(--title-color);
-}
-
-.header_area .main-menu .navbar-nav .active a{
-  background: var(--gradient-color);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.header_area .main-menu .navbar-nav a:hover{
-  background: var(--gradient-color);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-#navbar_fixed{
-  position: fixed;
-  width: 100%;
-  top: -1px;
-  left: 0; right: 0;
-  z-index: 999;
-  transition: background 1s ease;
-}
-
-/* --------------------------- end navigation --------------------------*/
-
-
-/* --------------------------- Start Home page --------------------------*/
-
-.site-main .site-banner {
-  background: url(/images/vivid-blurred-colorful-wallpaper-background.jpg) no-repeat 0% 50%;
-}
-
-.site-main .site-banner .site-title h3{
-  padding-top: 35%;
-  font-weight: 500;
-}
-
-.site-main .site-banner .site-title h3::after{
-  content: " ";
-  height: 2px;
-  width: 18vw;
-  background: black;
-  display: inline-block;
-  margin-left: 5%;
-  transform: translateY(-10px);
-}
-
-.site-main .site-banner .site-title h1{
-  font-size: 5rem;
-}
-
-.site-main .site-banner .site-title h4{
-  font-size: 1.5rem;
-}
-
-.site-main .site-banner .banner-image > img{
-  padding: 7rem 0;
-  width: 90rem;
-}
-
-.button{
-  padding: .8rem 2.2rem;
-  font: normal 500 16px/20px var(--roboto);
-  position: relative;
-  border: 3px solid transparent;
-  border-radius: 4px;
-}
-
-.button.primary-button{
-  background: var(--gradient-color);
-  background-clip: padding-box;
-  color: whitesmoke;
-  transition: background .6s ease;
-  box-shadow: var(--box-shadow);
-}
-
-.button.primary-button:hover{
-  background: whitesmoke;
-  background-clip: padding-box;
-  color: black;
-}
-.button.primary-button::after, .button.secondary-button::after{
-  position: absolute;
-  top: -2px; left: -2px;
-  bottom: -2px;  right: -2px;
-  background: var(--gradient-color);
-  content: ' ';
-  z-index: -1;
-  border-radius: 4px;
-}
-
-/* --------------------------- End Home page --------------------------*/
-
-/* --------------------------- Start About Me page --------------------------*/
-
-.site-main .about-area {
-  background: url(/images/vivid-blurred-colorful-wallpaper-background.jpg);
-  background-position: 0 1000px;
-}
-
-.site-main .about-area .container {
-  max-width: 1100px;
-  height: 700px;
-  margin: 0 auto;
-  padding: 5rem 3rem;
-  margin-top: 4rem;
-  text-align: center;
-}
-h1{
-  color: var(--title-color);
-  font-size: 5rem;
-  font-weight: 700;
-  margin-top:3rem;
-}
-
-.image{
-   border-radius: 60%;
-   width: 300px;
-   height: 300px;
-   margin-top: 1rem;
-   margin-bottom: 3rem;
-}
-p{
-   font-size: 1rem;
-   color: black;
-}
-#resume-btn{
-  text-decoration:none;
-  color:aliceblue;
-}
-#download_resume-btn{
-  margin-left: 25rem;
-
-}
-
-/* ------------------------------- Project Area  ---------------------------------------*/ 
-
-.site-main .project-area{
-  padding: 12rem 0;
-}
-
-.site-main .project-area .button-group button{
-  background: transparent;
-  border: none;
-  font: normal 500 16px/130px var(--roboto);
-  text-transform: uppercase;
-}
-
-.site-main .project-area .button-group button + button{
-  padding-left: 3rem;
-}
-
-.site-main .project-area .grid .our-project > .title h4{
-  font: normal 700 25px/12px var(--roboto);
-}
-
-.site-main .project-area .grid .our-project .img a:hover img{
-  filter: brightness(1.1) drop-shadow(1px 8px 30px #b1afaf);
-}
-
-
-/* --------------------------------- End Project Area ----------------------------- */ 
-
-
-/* ---------------------------------- Services Area ---------------------------------*/ 
-
-
-.site-main .services-area{
-  padding: 6rem 2rem;
-}
-
-.site-main .services-area .services-title{
-  padding: 0 14rem;
-}
-
-.site-main .services-area .services-title h1{
-  font-size: 35px;
-}
-
-.site-main > .services-area .services{
-  background: rgba(248, 252, 253, 0.973);
-  padding: 2rem 0;
-  width: 16rem;
-  margin: 5rem .5rem;
-  transition: box-shadow .7s ease;
-}
-
-.site-main > .services-area .services:hover{
-  box-shadow: var(--box-shadow);
-}
-
-/* ------------------------------- End Services Area --------------------------------*/
-
-/* ------------------------------- Contact me Area --------------------------------*/
-
-.container .text{
-  text-align: center;
-  font-size: 35px;
-  font-weight: 600;
-  background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-top: 7rem;
-}
-.container form{
-  padding: 2px 0 0 0;
-}
-.container form .form-row{
-  display: flex;
-  margin: 32px 0;
-}
-form .form-row .input-data{
-  width: 100%;
-  height: 40px;
-  margin: 0 20px;
-  position: relative;
-}
-form .form-row .textarea{
-  height: 70px;
-}
-.input-data input,
-.textarea textarea{
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: none;
-  font-size: 17px;
-  border-bottom: 2px solid rgba(0,0,0, 0.12);
-}
-.input-data input:focus ~ label, .textarea textarea:focus ~ label,
-.input-data input:valid ~ label, .textarea textarea:valid ~ label{
-  transform: translateY(-20px);
-  font-size: 14px;
-  color: #3498db;
-}
-.textarea textarea{
-  resize: none;
-  padding-top: 10px;
-}
-.input-data label{
-  position: absolute;
-  pointer-events: none;
-  bottom: 10px;
-  font-size: 16px;
-  transition: all 0.3s ease;
-}
-.textarea label{
-  width: 100%;
-  bottom: 40px;
-  background: #fff;
-}
-.input-data .underline{
-  position: absolute;
-  bottom: 0;
-  height: 2px;
-  width: 100%;
-}
-.input-data .underline:before{
-  position: absolute;
-  content: "";
-  height: 2px;
-  width: 100%;
-  background: #3498db;
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 0.3s ease;
-}
-.input-data input:focus ~ .underline:before,
-.input-data input:valid ~ .underline:before,
-.textarea textarea:focus ~ .underline:before,
-.textarea textarea:valid ~ .underline:before{
-  transform: scale(1);
-}
-
-/* ------------------------------- End Contact me Area --------------------------------*/ 
-
-
-/* ---------------------------------- Footer Area ----------------------------------------*/ 
-
-footer.footer-area{
-  padding: 5rem 0;
-  background: url(/images/footer-bg.png) no-repeat;
-}
-
-footer.footer-area .social h5{
-  font: normal 500 23px/ 30px var(--roboto);
-}
-
-footer.footer-area .social a > i{
-  font-size:22px;
-  padding: 2rem;
-  color: var(--border-color);
-}
-
-footer.footer-area .social a:hover > i{
-  color: var(--primary-color);
-}
-
-
-/* --------------------------------- End Footer --------------------------------------*/ 
+  .masthead {
+    min-height: 30rem;
+    position: relative;
+    display: table;
+    width: 100%;
+    height: auto;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("/images/2324573.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:aliceblue;
+  }
+  .masthead h1, .masthead .h1 {
+    font-size: 4rem;
+    margin: 0;
+    padding: 0;
+  }
+  @media (min-width: 992px) {
+    .masthead {
+      height: 100vh;
+    }
+    .masthead h1, .masthead .h1 {
+      font-size: 5.5rem;
+    }
+  }
