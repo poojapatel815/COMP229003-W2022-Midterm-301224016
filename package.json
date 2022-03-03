@@ -21,7 +21,7 @@
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JViniX/comp229-W2022-midterm-template.git"
+    "url": "git+https://github.com/poojapatel815/COMP229003-W2022-Midterm-301224016.git"
   },
   "keywords": [
     "Midterm",
@@ -30,7 +30,7 @@
     "Express",
     "EJS"
   ],
-  "author": "Julio Vinicius",
+  "author": "Pooja Patel",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/JViniX/comp229-W2022-midterm-template/issues"
