@@ -1,14 +1,26 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
 
+//Database setup
+let mongoose = require('mongoose');
+let dbURI = require('./db');
 
-var indexRouter = require('../routes/index');
-var movieRouter = require('../routes/movie');
+// Connect to the Database
+mongoose.connect(dbURI.AtlasDB);
 
-var app = express();
+let mongoDB = mongoose.connection;
+mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
+mongoDB.once('open', ()=>{
+  console.log('Connected to MongoDB...');
+});
+
+let indexRouter = require('../routes/index');
+let movieRouter = require('../routes/movie');
+
+let app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, '../views'));
